@@ -12,7 +12,7 @@ Hosted on - <br/>
 
 - [Robinder Dhillon](rb802397@dal.ca) - _(Developer)_
 - [Vishal Sancheti](Vishal.Sancheti@dal.ca) - _(Developer)_
-- [Yash Jaiswal](ys432526@dal.ca) - _(MERN Stack Developer)_
+- [Yash Jaiswal](ys432526@dal.ca) - _(Developer)_
 
 ## Built With
 
