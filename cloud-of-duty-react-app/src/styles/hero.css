@@ -1,0 +1,17 @@
+.heroOverlay {
+  background-image: url("../images/james-stamler-k3heD_KwH0A-unsplash.jpg");
+  background-size: cover;
+  height: 480px;
+  width: auto;
+  margin-bottom: 4rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+.heroCopy {
+  background-color: rgba(255, 255, 255, 0.803);
+  text-align: center;
+  padding: 3rem;
+  margin: 0 1rem;
+}
