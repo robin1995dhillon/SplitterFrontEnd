@@ -2,6 +2,7 @@ import Meta from "../components/Meta";
 import Hero from "../components/Hero";
 import React, { Component } from "react";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import Menu from "../components/Menu";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -75,6 +76,7 @@ const Home = () => {
           </Col>
         </Row>
       </Container>
+      <Footer></Footer>
     </div>
   );
 };

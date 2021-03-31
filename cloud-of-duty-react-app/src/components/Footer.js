@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <>
       <footer className="text-center text-capitalize mt-3 p-2 bg-dark text-light">
-        copyright CloudOdDuty &copy; {year}
+        Thank you for visiting :)
       </footer>
     </>
   );
