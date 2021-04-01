@@ -3,14 +3,16 @@
   background-size: cover;
   height: 480px;
   width: auto;
-  margin-bottom: 4rem;
+  /* margin-bottom: 4rem; */
   background-position: center;
   background-repeat: no-repeat;
+  font-size: 24px;
   display: flex;
   align-items: center;
 }
 .heroCopy {
-  background-color: rgba(255, 255, 255, 0.803);
+  background-color: rgb(209, 224, 237);
+  font-weight: 100px;
   text-align: center;
   padding: 3rem;
   margin: 0 1rem;

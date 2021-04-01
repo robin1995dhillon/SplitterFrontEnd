@@ -9,7 +9,7 @@ class Hero extends Component {
       <div class="heroOverlay" data-aos="fade-up" data-aos-once="true">
         <div className="container">
           <div className="row justify-content-center">
-            <div class="heroCopy col-lg-8">
+            <div class="heroCopy col-xl-12">
               <h1 className="h600" style={{ color: "#0275d8" }}>
                 {heading}
               </h1>
