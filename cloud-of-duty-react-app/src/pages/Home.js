@@ -10,16 +10,12 @@ import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
 
 const Home = () => {
-  // page content
-  const pageTitle = "Cloud of Duty";
-  const pageDescription = "Welcome to Cloud of Duty";
-
   return (
     <div>
-      <Meta title={pageTitle} />
+      <Meta title={"Cloud of Duty"} />
       <Hero
         heading="Cloud Of Duty"
-        paragraph="Upload Your Favourite Song to remove vocals from the Audio Track."
+        paragraph="Upload Your Favourite Song to seperate vocals from the Audio Track."
         button="Get
       Started"
       />

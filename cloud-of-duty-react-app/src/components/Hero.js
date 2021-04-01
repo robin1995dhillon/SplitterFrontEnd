@@ -16,7 +16,7 @@ class Hero extends Component {
               <div className="overlay">
                 <p>{paragraph}</p>
               </div>
-              <a type="button" class="btn btn-outline-dark" href="/signup">
+              <a type="button" class="btn btn-outline-dark" href="/upload">
                 {button}
               </a>
             </div>

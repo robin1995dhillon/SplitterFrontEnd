@@ -23,14 +23,9 @@ const Menu = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <Button
-              variant="outline-light"
-              onClick={() => {
-                window.location.href = "/upload";
-              }}
-            >
-              Upload
-            </Button>
+            <LinkContainer to="/">
+              <Button variant="outline-light">Go Back</Button>
+            </LinkContainer>
           </Nav>
         </Navbar.Collapse>
       </Container>

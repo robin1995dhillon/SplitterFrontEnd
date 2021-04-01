@@ -4,11 +4,11 @@
 
 - [React Bootstrap Starter Template](https://github.com/ChrisAchinga/react-bootstrap-starter)
 - [React Bootstrap Starter Template](https://reactjsexample.com/a-react-bootstrap-starter-template-with-react-router/)
+- [Bootstrap Components](https://getbootstrap.com/docs/5.0/examples/carousel/)
 
 ## Images used
 
-https://unsplash.com/photos/k3heD_KwH0A
-https://undraw.co/
+-[Banner Image from Unsplash](https://unsplash.com/photos/k3heD_KwH0A) -[Logo&Illustrations from UnDraw](https://undraw.co/)
 
 Repo Link -
 
