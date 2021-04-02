@@ -13,6 +13,38 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
 class Upload extends Component {
+  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {
+      files: {
+        label: "only .mp3 files are supported!!",
+        selectedFiles: null,
+        loaded: 0,
+      },
+    };
+  }
+
+  onFileUploadChange = (event) => {
+    event.preventDefault();
+    var filename = event.target.files[0].name;
+
+    this.setState({
+      files: {
+        label: filename,
+        selectedFiles: event.target.files,
+        loaded: 1,
+      },
+    });
+  };
+
+  uploadFile = (event) => {
+    event.preventDefault();
+    console.table(event.target);
+    // const formData = new FormData(event.target);
+    //API AXIOS CALL HERE
+  };
+
   render() {
     return (
       <div>
@@ -21,7 +53,7 @@ class Upload extends Component {
         <Container fluid className="pt-5 mt-5" style={{ minHeight: "90vh" }}>
           <Row className="justify-content-center">
             <Col md={6}>
-              <Form>
+              <Form onSubmit={this.uploadFile}>
                 <Form.Group as={Row} controlId="email">
                   <Form.Label column md={2}>
                     {" "}
@@ -29,7 +61,7 @@ class Upload extends Component {
                   </Form.Label>
                   <Col md={10}>
                     <Form.Control
-                      type="input"
+                      type="email"
                       placeholder="Enter your email here.."
                       name="email"
                       required
@@ -46,12 +78,11 @@ class Upload extends Component {
                       type="file"
                       id="uploadFile"
                       name="uploadFile"
-                      label="only .mp3 files are supported!!"
+                      label={this.state.files.label}
                       custom
-                      // multiple
                       accept=".mp3"
-                      // onChange={this.onFileChangeHandler}
-                      // value={this.state.selectedFiles}
+                      onChange={this.onFileUploadChange}
+                      value={this.state.selectedFiles}
                       required
                     />
                   </Col>
@@ -59,17 +90,16 @@ class Upload extends Component {
 
                 <Form.Group id="agreeTermsAndConditions">
                   <Form.Check
-                    style={{
-                      marginLeft: "18%",
-                      marginBottom: "0%",
-                      marginTop: "0%",
-                    }}
                     type="checkbox"
                     label="By selecting this checkbox, you agree that we upload this file to our servers for processing."
                     required
                   />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button
+                  variant="primary"
+                  type="submit"
+                  style={{ float: "right" }}
+                >
                   Submit
                 </Button>
               </Form>
