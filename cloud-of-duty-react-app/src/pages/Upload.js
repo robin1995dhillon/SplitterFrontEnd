@@ -48,7 +48,7 @@ class Upload extends Component {
     Swal.fire({
       title: "Please Wait",
       html: "Your Request is Processing!!!! <b></b> milliseconds.",
-      timer: 100000,
+      timer: 1000,
       timerProgressBar: true,
       didOpen: () => {
         Swal.showLoading();

@@ -4,11 +4,12 @@
 
 - [React Bootstrap Starter Template](https://github.com/ChrisAchinga/react-bootstrap-starter)
 - [React Bootstrap Starter Template](https://reactjsexample.com/a-react-bootstrap-starter-template-with-react-router/)
-- [Bootstrap Components](https://getbootstrap.com/docs/5.0/examples/carousel/)
+- [Bootstrap Components - Carousel](https://getbootstrap.com/docs/5.0/examples/carousel/)
+- [Bootstrap Components - Heroes](https://getbootstrap.com/docs/5.0/examples/heroes/)
 
 ## Images used
 
--[Banner Image from Unsplash](https://unsplash.com/photos/k3heD_KwH0A) -[Logo&Illustrations from UnDraw](https://undraw.co/)
+-[Logo&Illustrations from UnDraw](https://undraw.co/)
 
 Repo Link - https://git.cs.dal.ca/yna/csci5409-group2-frontendapp<br/>
 
