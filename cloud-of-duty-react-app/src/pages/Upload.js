@@ -11,6 +11,7 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import Swal from "sweetalert2";
 
 class Upload extends Component {
   state = {};
@@ -43,12 +44,39 @@ class Upload extends Component {
     console.table(event.target);
     // const formData = new FormData(event.target);
     //API AXIOS CALL HERE
-    this.props.history.push({
-      pathname: "/confirmation",
-      data: {
-        email: "email",
-        confirmationid: "1234",
+    let timerInterval;
+    Swal.fire({
+      title: "Please Wait",
+      html: "Your Request is Processing!!!! <b></b> milliseconds.",
+      timer: 100000,
+      timerProgressBar: true,
+      didOpen: () => {
+        Swal.showLoading();
+        timerInterval = setInterval(() => {
+          const content = Swal.getContent();
+          if (content) {
+            const b = content.querySelector("b");
+            if (b) {
+              b.textContent = Swal.getTimerLeft();
+            }
+          }
+        }, 100);
       },
+      willClose: () => {
+        clearInterval(timerInterval);
+      },
+    }).then((result) => {
+      /* Read more about handling dismissals below */
+      if (result.dismiss === Swal.DismissReason.timer) {
+        console.log("I was closed by the timer");
+      }
+      this.props.history.push({
+        pathname: "/confirmation",
+        data: {
+          email: "email",
+          confirmationid: "1234",
+        },
+      });
     });
     //add alert if any error from API
   };

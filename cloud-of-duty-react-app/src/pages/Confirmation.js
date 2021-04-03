@@ -29,24 +29,23 @@ class Confirmation extends Component {
               justifyContent: "center",
             }}
           >
-            <Image
-              src={ConfirmationImage}
-              style={{ height: "350px", width: "350px" }}
-            ></Image>
-            <Card style={{ marginTop: "5px" }}>
+            <Card style={{ marginTop: "5px", border: "0px" }}>
               <Card.Title style={{ textAlign: "center", fontStyle: "Bold" }}>
+                <Image
+                  src={ConfirmationImage}
+                  style={{ height: "350px", width: "450px" }}
+                ></Image>
                 <h2>
-                  Congratulations!!! Your files will be emailed to you shortly.
+                  Your processed Audio files will be emailed to you shortly @
+                  {this.props.history.location.data.email}.
                 </h2>
-              </Card.Title>
-              <Card.Body>
-                <h4> Email ID : {this.props.history.location.data.email}</h4>
-                <h4>
+                <h3>
                   {" "}
                   Confirmation ID:{" "}
                   {this.props.history.location.data.confirmationid}
-                </h4>
-              </Card.Body>
+                </h3>
+              </Card.Title>
+              <Card.Body></Card.Body>
             </Card>
           </div>
           <div
