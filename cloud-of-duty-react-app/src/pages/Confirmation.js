@@ -37,12 +37,19 @@ class Confirmation extends Component {
                 ></Image>
                 <h2>
                   Your processed Audio files will be emailed to you shortly @
-                  {this.props.history.location.data.email}.
+                  {this.props.history &&
+                    this.props.history.location &&
+                    this.props.history.location.data &&
+                    this.props.history.location.data.email}
+                  .
                 </h2>
                 <h3>
                   {" "}
                   Confirmation ID:{" "}
-                  {this.props.history.location.data.confirmationid}
+                  {this.props.history &&
+                    this.props.history.location &&
+                    this.props.history.location.data &&
+                    this.props.history.location.data.confirmationid}
                 </h3>
               </Card.Title>
               <Card.Body></Card.Body>
