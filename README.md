@@ -10,13 +10,13 @@
 
 -[Banner Image from Unsplash](https://unsplash.com/photos/k3heD_KwH0A) -[Logo&Illustrations from UnDraw](https://undraw.co/)
 
-Repo Link -
+Repo Link - https://git.cs.dal.ca/yna/csci5409-group2-frontendapp<br/>
 
-Hosted on - <br/>
+Hosted on - http://cloudofduty.herokuapp.com/<br/>
 
 - _Date Created_: 10 March 2021
-- _Last Modification Date_: 10 March 2021
-- _URL_: <>
+- _Last Modification Date_: 02 April 2021
+- _URL_: https://cloudofduty.herokuapp.com/
 
 ## Authors
 
