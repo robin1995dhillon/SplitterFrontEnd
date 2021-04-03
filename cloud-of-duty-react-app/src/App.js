@@ -8,6 +8,7 @@ import {
 import Home from "./pages/Home";
 import Upload from "./pages/Upload";
 import NotFound from "./pages/NotFound.js";
+import Confirmation from "./pages/Confirmation.js";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Switch>
           <Route path="/" component={Home} exact></Route>
           <Route path="/upload" component={Upload}></Route>
+          <Route path="/confirmation" component={Confirmation}></Route>
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>

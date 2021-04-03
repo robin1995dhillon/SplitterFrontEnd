@@ -43,6 +43,14 @@ class Upload extends Component {
     console.table(event.target);
     // const formData = new FormData(event.target);
     //API AXIOS CALL HERE
+    this.props.history.push({
+      pathname: "/confirmation",
+      data: {
+        email: "email",
+        confirmationid: "1234",
+      },
+    });
+    //add alert if any error from API
   };
 
   render() {
@@ -50,63 +58,70 @@ class Upload extends Component {
       <div>
         <Meta title="Cloud of Duty" />
         <Menu></Menu>
-        <Container fluid className="pt-5 mt-5" style={{ minHeight: "90vh" }}>
+        <Container fluid className="pt-5 mt-5" style={{ minHeight: "85vh" }}>
           <Row className="justify-content-center">
             <Col md={6}>
               <Form onSubmit={this.uploadFile}>
-                <Form.Group as={Row} controlId="email">
-                  <Form.Label column md={2}>
+                <Card>
+                  <Card.Header>
                     {" "}
-                    Email
-                  </Form.Label>
-                  <Col md={10}>
-                    <Form.Control
-                      type="email"
-                      placeholder="Enter your email here.."
-                      name="email"
-                      required
-                    />
-                  </Col>
-                </Form.Group>
+                    <h4>Upload your audio file </h4>
+                  </Card.Header>
+                  <Card.Body>
+                    <Form.Group as={Row} controlId="email">
+                      <Form.Label column md={2}>
+                        {" "}
+                        Email
+                      </Form.Label>
+                      <Col md={10}>
+                        <Form.Control
+                          type="email"
+                          placeholder="Enter your email here.."
+                          name="email"
+                          required
+                        />
+                      </Col>
+                    </Form.Group>
 
-                <Form.Group as={Row} controlId="uploadFile">
-                  <Form.Label column md={2}>
-                    Audio File
-                  </Form.Label>
-                  <Col md={10}>
-                    <Form.File
-                      type="file"
-                      id="uploadFile"
-                      name="uploadFile"
-                      label={this.state.files.label}
-                      custom
-                      accept=".mp3"
-                      onChange={this.onFileUploadChange}
-                      value={this.state.selectedFiles}
-                      required
-                    />
-                  </Col>
-                </Form.Group>
+                    <Form.Group as={Row} controlId="uploadFile">
+                      <Form.Label column md={2}>
+                        Audio File
+                      </Form.Label>
+                      <Col md={10}>
+                        <Form.File
+                          type="file"
+                          id="uploadFile"
+                          name="uploadFile"
+                          label={this.state.files.label}
+                          custom
+                          accept=".mp3"
+                          onChange={this.onFileUploadChange}
+                          value={this.state.selectedFiles}
+                          required
+                        />
+                      </Col>
+                    </Form.Group>
 
-                <Form.Group id="agreeTermsAndConditions">
-                  <Form.Check
-                    type="checkbox"
-                    label="By selecting this checkbox, you agree that we upload this file to our servers for processing."
-                    required
-                  />
-                </Form.Group>
-                <Button
-                  variant="primary"
-                  type="submit"
-                  style={{ float: "right" }}
-                >
-                  Submit
-                </Button>
+                    <Form.Group id="agreeTermsAndConditions">
+                      <Form.Check
+                        type="checkbox"
+                        label="By selecting this checkbox, you agree that we upload this file to our servers for processing."
+                        required
+                      />
+                    </Form.Group>
+                    <Button
+                      variant="primary"
+                      type="submit"
+                      style={{ float: "right" }}
+                    >
+                      Submit
+                    </Button>
+                  </Card.Body>
+                </Card>
               </Form>
             </Col>
           </Row>
         </Container>
-
         <Footer></Footer>
       </div>
     );
