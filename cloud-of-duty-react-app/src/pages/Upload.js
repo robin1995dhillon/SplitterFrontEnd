@@ -12,6 +12,7 @@ import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 class Upload extends Component {
   state = {};
@@ -42,42 +43,62 @@ class Upload extends Component {
   uploadFile = (event) => {
     event.preventDefault();
     console.table(event.target);
-    // const formData = new FormData(event.target);
-    //API AXIOS CALL HERE
-    let timerInterval;
-    Swal.fire({
-      title: "Please Wait",
-      html: "Your Request is Processing!!!! <b></b> milliseconds.",
-      timer: 1000,
-      timerProgressBar: true,
-      didOpen: () => {
-        Swal.showLoading();
-        timerInterval = setInterval(() => {
-          const content = Swal.getContent();
-          if (content) {
-            const b = content.querySelector("b");
-            if (b) {
-              b.textContent = Swal.getTimerLeft();
-            }
+    const formData = new FormData(event.target);
+    const conf = {
+      headers: {
+        "content-type": "multipart/form-data",
+        "Access-Control-Allow-Origin": "*",
+      },
+    };
+    axios
+      .post(
+        "http://cloudofdutybackend-env.eba-sr287zua.us-east-1.elasticbeanstalk.com/upload",
+        formData,
+        conf
+      )
+      .then((response) => {
+        var responseUpload = response;
+        console.log("resbody" + responseUpload.data.id);
+        console.log("email" + responseUpload.data.email);
+        let timerInterval;
+        Swal.fire({
+          title: "Please Wait",
+          html: "Your Request is Processing!!!! <b></b> milliseconds.",
+          timer: 1000,
+          timerProgressBar: true,
+          didOpen: () => {
+            Swal.showLoading();
+            timerInterval = setInterval(() => {
+              const content = Swal.getContent();
+              if (content) {
+                const b = content.querySelector("b");
+                if (b) {
+                  b.textContent = Swal.getTimerLeft();
+                }
+              }
+            }, 100);
+          },
+          willClose: () => {
+            clearInterval(timerInterval);
+          },
+        }).then((result) => {
+          /* Read more about handling dismissals below */
+          if (result.dismiss === Swal.DismissReason.timer) {
+            console.log("I was closed by the timer");
           }
-        }, 100);
-      },
-      willClose: () => {
-        clearInterval(timerInterval);
-      },
-    }).then((result) => {
-      /* Read more about handling dismissals below */
-      if (result.dismiss === Swal.DismissReason.timer) {
-        console.log("I was closed by the timer");
-      }
-      this.props.history.push({
-        pathname: "/confirmation",
-        data: {
-          email: "email",
-          confirmationid: "1234",
-        },
+          this.props.history.push({
+            pathname: "/confirmation",
+            data: {
+              email: responseUpload.data.email,
+              confirmationid: responseUpload.data.id,
+            },
+          });
+        });
+      })
+      .catch((error) => {
+        Swal.fire("Your request failed!! Please try later!!!!");
       });
-    });
+
     //add alert if any error from API
   };
 
@@ -118,8 +139,8 @@ class Upload extends Component {
                       <Col md={10}>
                         <Form.File
                           type="file"
-                          id="uploadFile"
-                          name="uploadFile"
+                          id="file"
+                          name="file"
                           label={this.state.files.label}
                           custom
                           accept=".mp3"
