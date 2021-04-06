@@ -50,50 +50,66 @@ class Upload extends Component {
         "Access-Control-Allow-Origin": "*",
       },
     };
+    const confOne = {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        AuthorizationToken: "Y2xvdWRvZmR1dHk=",
+      },
+    };
     axios
-      .post(
-        "http://cloudofdutybackend-env.eba-sr287zua.us-east-1.elasticbeanstalk.com/upload",
-        formData,
-        conf
+      .get(
+        "https://7fvj26m2nb.execute-api.us-east-1.amazonaws.com/lambdaAuthPy",
+        confOne
       )
       .then((response) => {
-        var responseUpload = response;
-        console.log("resbody" + responseUpload.data.id);
-        console.log("email" + responseUpload.data.email);
-        let timerInterval;
-        Swal.fire({
-          title: "Please Wait",
-          html: "Your Request is Processing!!!! <b></b> milliseconds.",
-          timer: 1000,
-          timerProgressBar: true,
-          didOpen: () => {
-            Swal.showLoading();
-            timerInterval = setInterval(() => {
-              const content = Swal.getContent();
-              if (content) {
-                const b = content.querySelector("b");
-                if (b) {
-                  b.textContent = Swal.getTimerLeft();
+        const responseObj = response;
+        if (responseObj.data.success == true) {
+          console.log(responseObj.data.api_url);
+          axios
+            .post(responseObj.data.api_url, formData, conf)
+            .then((response) => {
+              var responseUpload = response;
+              console.log("resbody" + responseUpload.data.id);
+              console.log("email" + responseUpload.data.email);
+              let timerInterval;
+              Swal.fire({
+                title: "Please Wait",
+                html: "Your Request is Processing!!!! <b></b> milliseconds.",
+                timer: 1000,
+                timerProgressBar: true,
+                didOpen: () => {
+                  Swal.showLoading();
+                  timerInterval = setInterval(() => {
+                    const content = Swal.getContent();
+                    if (content) {
+                      const b = content.querySelector("b");
+                      if (b) {
+                        b.textContent = Swal.getTimerLeft();
+                      }
+                    }
+                  }, 100);
+                },
+                willClose: () => {
+                  clearInterval(timerInterval);
+                },
+              }).then((result) => {
+                /* Read more about handling dismissals below */
+                if (result.dismiss === Swal.DismissReason.timer) {
+                  console.log("I was closed by the timer");
                 }
-              }
-            }, 100);
-          },
-          willClose: () => {
-            clearInterval(timerInterval);
-          },
-        }).then((result) => {
-          /* Read more about handling dismissals below */
-          if (result.dismiss === Swal.DismissReason.timer) {
-            console.log("I was closed by the timer");
-          }
-          this.props.history.push({
-            pathname: "/confirmation",
-            data: {
-              email: responseUpload.data.email,
-              confirmationid: responseUpload.data.id,
-            },
-          });
-        });
+                this.props.history.push({
+                  pathname: "/confirmation",
+                  data: {
+                    email: responseUpload.data.email,
+                    confirmationid: responseUpload.data.id,
+                  },
+                });
+              });
+            })
+            .catch((error) => {
+              Swal.fire("Your request failed!! Please try later!!!!");
+            });
+        }
       })
       .catch((error) => {
         Swal.fire("Your request failed!! Please try later!!!!");
