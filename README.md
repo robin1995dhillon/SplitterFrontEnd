@@ -1,16 +1,5 @@
 # CLOUD-OF-DUTY-FrontEndReactApp
 
-# REFERENCES
-
-- [React Bootstrap Starter Template](https://github.com/ChrisAchinga/react-bootstrap-starter)
-- [React Bootstrap Starter Template](https://reactjsexample.com/a-react-bootstrap-starter-template-with-react-router/)
-- [Bootstrap Components - Carousel](https://getbootstrap.com/docs/5.0/examples/carousel/)
-- [Bootstrap Components - Heroes](https://getbootstrap.com/docs/5.0/examples/heroes/)
-
-## Images used
-
--[Logo&Illustrations from UnDraw](https://undraw.co/)
-
 Repo Link - https://git.cs.dal.ca/yna/csci5409-group2-frontendapp<br/>
 
 Hosted on - http://cloudofduty.herokuapp.com/<br/>
@@ -29,3 +18,24 @@ Hosted on - http://cloudofduty.herokuapp.com/<br/>
 
 - [React(JS library)](https://reactjs.org/)
 - [React-Bootstrap](https://react-bootstrap.github.io/)
+
+### Packages Used
+
+- [Axios](https://www.npmjs.com/package/axios)
+- [bootstrap](https://www.npmjs.com/package/bootstrap)
+- [react-dom](https://www.npmjs.com/package/react-dom)
+- [react-helmet](https://www.npmjs.com/package/react-helmet)
+- [react-router-bootstrap](https://www.npmjs.com/package/react-router-bootstrap)
+- [react-router-dom](https://www.npmjs.com/package/react-router-dom)
+- [sweetalert2](https://www.npmjs.com/package/sweetalert2)
+
+## Images used
+
+-[Logo & Illustrations from UnDraw](https://undraw.co/)<br/>
+
+# REFERENCES (Components used from)
+
+- [React Bootstrap Starter Template](https://github.com/ChrisAchinga/react-bootstrap-starter)
+- [React Bootstrap Starter Template](https://reactjsexample.com/a-react-bootstrap-starter-template-with-react-router/)
+- [Bootstrap Components - Carousel](https://getbootstrap.com/docs/5.0/examples/carousel/)
+- [Bootstrap Components - Heroes](https://getbootstrap.com/docs/5.0/examples/heroes/)
