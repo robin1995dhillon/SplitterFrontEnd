@@ -1,22 +1,22 @@
 import React, { Component } from "react";
-import "../styles/hero.css";
-import { LinkContainer } from "react-router-bootstrap";
 
 class Hero extends Component {
   render() {
     const { heading, paragraph, button } = this.props;
     return (
-      <div class="heroOverlay" data-aos="fade-up" data-aos-once="true">
-        <div className="container">
-          <div className="row justify-content-center">
-            <div class="heroCopy col-xl-12">
-              <h1 className="h600" style={{ color: "#0275d8" }}>
-                {heading}
-              </h1>
-              <div className="overlay">
-                <p>{paragraph}</p>
-              </div>
-              <a type="button" class="btn btn-outline-dark" href="/upload">
+      <div class="bg-dark text-secondary px-4 py-5 text-center">
+        <div class="py-5">
+          <h1 class="display-5 fw-bold text-white">{heading}</h1>
+          <div class="col-lg-6 mx-auto">
+            <p class="fs-5 mb-4" style={{ color: "white" }}>
+              {paragraph}
+            </p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+              <a
+                type="button"
+                class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold"
+                href="/upload"
+              >
                 {button}
               </a>
             </div>

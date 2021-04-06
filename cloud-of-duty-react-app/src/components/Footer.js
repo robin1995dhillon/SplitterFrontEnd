@@ -4,7 +4,8 @@ const Footer = () => {
   return (
     <>
       <footer className="text-center text-capitalize mt-3 p-2 bg-dark text-light">
-        Thank you for visiting :)
+        Special Thanks to{" "}
+        <a href="https://github.com/deezer/spleeter">Spleeter - MIT LICENSE</a>
       </footer>
     </>
   );
