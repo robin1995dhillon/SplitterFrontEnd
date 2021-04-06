@@ -31,7 +31,7 @@ Hosted on - http://cloudofduty.herokuapp.com/<br/>
 
 ## Images used
 
--[Logo & Illustrations from UnDraw](https://undraw.co/)<br/>
+- [Logo & Illustrations from UnDraw](https://undraw.co/)<br/>
 
 # REFERENCES (Components used from)
 
