@@ -1,4 +1,4 @@
-# CLOUD-OF-DUTY-FrontEndReactApp
+# GROUP2-CLOUD-OF-DUTY-FrontEndReactApp
 
 Repo Link - https://git.cs.dal.ca/yna/csci5409-group2-frontendapp<br/>
 
